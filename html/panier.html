@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="../css/stylesheet.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../images/logo-no-background.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!--On charge le JQuery avant le javascript principal-->
+    <script src = '../js/main.js'></script>
+    <title>Réservation</title>
+</head>
+<body class = "background" onload = "affiche_panier()"> <!--On charge le panier lorsque on ouvre la page-->
+  <div id="header-container"></div>
+
+  <div>
+    <p class = "info">
+    Oh non votre panier est vide ! Essayez de choisir une destination depuis la page principale. <!--Panier vide-->
+    </p>
+  </div>
+  <div id = "grid_container_panier">
+    <template id = "panier_template">
+      <p> <!--Panier avec au moins une destination-->
+        Vous avez réservé pour partir à {{lieu}} du {{date_d}} au {{date_r}} pour {{nb_adultes}} adultes et {{nb_enfant}} enfants {{petit_dej}} petit dejeuner pour un prix total de {{prix_voyages}} €.
+      </p>
+      
+    </template>
+  </div>
+  <div >
+    <form action="../html/confirmation.html" id = "formulaire_confirmation_panier"> <!--Formulaire de confirmation du panier où on requis des infos supplémentaires-->
+      <div class="container">
+        <label for="uname"><b>Nom</b></label>
+        <input type="text" placeholder="Entrez votre Nom" name="uname" required>
+        <label for="usurname"><b>Prénom</b></label>
+        <input type="text" placeholder="Entrez votre Prénom" name="usurname" required>
+        <label for="email"><b>Adresse mail</b></label>
+        <input type="text" placeholder="Entrez votre adresse mail" name="email" required>
+        <label for="email"><b>Adresse Postal</b></label>
+        <input type="text" placeholder="Entrez votre adresse postal" name="email" required>
+        <button class = int type="submit"  id = "button_panier" >Confirmer</button> <!--Bouton pour confirmer le panier  -->
+        <button class = int type="button" onclick="supprimer_panier();window.location.href='panier.html'" id = "button_panier" >Supprimer</button> <!--Bouton pour supprimer le panier-->
+      </div>
+    </form>
+  </div>
+  
+
+
+  <div id="footer-container"></div> <!--Pied de page-->
+</body>
+</html>

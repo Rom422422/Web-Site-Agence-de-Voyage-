@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css?family=Caveat');
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+*{ 
+  font-family: "Nunito",Arial, Helvetica, sans-serif; /*Police par défaut*/
+  list-style: none /* On retire les points des listes*/
+  
+}
+
+
+header{
+  background-color: rgb(0, 102, 255); 
+}
+
+body{ /*On retire le padding crée par les navigateurs*/
+  padding: 0px;
+  margin : 0px;
+}
+
+
+#titre {
+  font-family: "Caveat",Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-size: 72px;
+  padding: 10px;
+  margin-block-start: 0.6em;
+  margin-block-end: 0.3em;
+}
+
+
+#navbar { /*Id de la bar de navigation*/
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 25px;
+
+}
+#navbar img{
+    width: 2.5vw;
+}
+
+#ms{ /*Id de la première phrase de la page réservation*/
+  font-family: "Caveat",Arial, Helvetica, sans-serif;
+  font-size: 50px;
+}
+
+
+.a{
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none ;
+    cursor: pointer;
+    text-align: right;
+}
+.grid-cont { /*Notre GRID*/
+  justify-content: center;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 3px ;
+  margin-bottom : 100px;
+
+}
+
+#grid_container_panier { /* Container qui contient les réservations*/
+  text-align: center;
+  margin: 0 30%;
+  margin-bottom : 100px;
+}
+
+#grid_container_panier p{ 
+  background-color: aliceblue;
+  padding: 1%;
+  border-radius: 10vw;
+}
+
+
+.grid-cont a{ /*On mets un margin pour que notre "grid" ne sorte pas du panier */
+  margin-bottom: 70px;
+}
+
+.grid-cont a:hover .info_img { /*Affiche les infos de chaque destination lorsque on passe la souris*/
+  display: block;
+}
+
+.info_img{ /*Teste qui s'affiche sous les images*/
+  top: 90%;
+  left: 50%;
+  justify-items: center;
+  justify-content: center;
+  text-align: center;
+  display: none;
+  position: absolute;
+  text-decoration: none;
+  transform: translate(-50%,-50%);
+  font-size: 25px;
+}
+#bodyresa{ /*Id du body de la page réservation*/
+  background: none;
+  background-size: cover ;
+  }
+
+#resa{ /*Id de la section qui contient le formulaire de réservation ainsi que la phrase au début de la page*/
+  background-color: #fffdfd9c;
+  text-align: center;
+}
+
+#formresa{ /*Id du formulaire de réservation*/
+  font-size : 25px;
+}
+
+
+.image { /*Image du template / Grid */
+    height: 30vh ;
+}
+
+.image:hover { /*Fait grandir les images quand on les survoles avec la souris*/
+    transform: scale(1.5);
+    transition: 0.5s ease-in-out; 
+    z-index: 10; 
+}
+
+
+.int{ /*Class qui contient les input sauf filtres*/
+  height: 25px;
+  background-color: rgb(0, 102, 255);
+  border : none;
+  margin : 10px;
+  font-size: 22px;
+  width: 150px;
+}
+
+#person1{ /*Nombre de d'adulte*/
+  width: 45px;
+}
+#person2{ /*Nombre d'enfants*/
+  width: 45px;
+}
+#ptit_dej{ /*Check box*/
+  width: 40px;
+}
+
+#connexion{ /* Div qui contient le formulaire de remplissage de la connexion*/
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width:  160px;
+  width: 20%;
+  right: 0.5vw;
+  overflow: auto;
+  box-shadow: 0px 8px 16px ;
+  z-index: 1;
+  font-size: 18px;
+}
+
+
+#foot{ /* Phrase du footer 'A propos et Contats'*/
+  font-family: "Caveat",Arial, Helvetica, sans-serif;
+}
+
+ footer{ /*Style du footer*/
+  margin-top: 30px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: white;
+  text-align: center;
+  font-size : 25px;
+ }
+ /*On retire les effets liés aux liens hypertextes*/
+ a:-webkit-any-link {
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+#filter_ptit_dej{  /* On modifie la taille de notre check box*/
+  height: 10px;
+  width: 10px;
+}
+#filter_animals{ /* On modifie la taille de notre check box*/
+  height: 10px;
+  width: 10px;
+}
+
+.filter-content { /*Overlay qui contient les filtres*/
+  display: none;
+  position: absolute;
+  text-align: center;
+  background: #fff;
+  width:  250px;
+  padding: 10px 15px 0px;
+  left: 0.5vw;
+  font-size: 12px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px ;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+/* Affichage du bouton filtre sur la page d'accueil et on le retire sur les autres*/
+#filternav{
+  display: none;
+}
+#bodyindex #filternav{
+  display: block;
+}
+
+/*Ensemble des styles liés au filtres*/
+.price-input{
+  display: flex;
+  margin: 10px 0 35px;
+}
+.price-input .field{
+  height: 45px;
+  width: 32%;
+  display: flex;
+  align-items: center;
+}
+
+.field input{
+  width: 50%;
+  height: 50%;
+  margin-left: 6px;
+  outline: none;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 12px;
+  border: 1px solid #999;
+}
+
+ /*On retire ici les petites flèches de input de type bouton*/
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button{
+  -webkit-appearance:none
+}
+
+.price-input .separator{ /*Style de notre tiret entre Min et Max*/
+  width: 50px;
+  display: flex;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+/*Ici le slider est notre bar grise qui semble etre le support de notre double slider bleu*/
+.slider{
+  height: 5px;
+  border-radius: 5px;
+  background: #ddd;
+  position: relative;
+  width: 80%;
+  left: 10%;
+  right: 10%;
+}
+
+/*Barre bleu de notre slider qui change de taille en suivant les curseurs*/
+.slider .progress{
+  height: 5px;
+  position: absolute;
+  border-radius: 5px;
+  background:#0066FF;
+  left: 0%;
+  right: 0%;
+}
+
+.range-input{
+  position: relative;
+}
+.range-input input{
+  position: absolute;
+  top : -7px;
+  height: 5px;
+  width: 81%;
+  left: 9%;
+  right: 10%;
+  background: none;
+  pointer-events: none;
+  -webkit-appearance: none; /* Ligne de commande nécessaire qui retire le style du navigateur sur nos sliders ( essayez sans c'est moche )*/
+
+
+}
+input[type='range']::-webkit-slider-thumb{  /* On applique le style au curseur pour tout les navigateurs web ( hors mozzila )*/
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  pointer-events: auto;
+  background:#0066FF;
+}
+
+.show {display: block;} /* On crée cette classe pour afficher les overlays */
+
+.h1{
+font-family: "Jazz LET", Arial, sans-serif ;
+}
+
+input[type=text], input[type=password] { /* On applique le style au input de connexion*/
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+#btnnav { /* Style du bouton de connexion*/
+  background-color: rgb(0, 102, 255); 
+  color: none;
+  border: none;
+  cursor: pointer;
+  background-color: rgba(0, 30, 255, 0);
+}
+
+#btnnav:hover, .dropbtn:focus { /*On évite de voir l'appartion d'un fond quand on survole le bouton*/
+  background-color: none;
+}
+
+button { /*Style des autres boutons*/
+    background-color:rgb(0, 102, 255);
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    width: 50 px;
+}
+
+
+button:hover { /* L'opacité de nos bouttonschange quand on les survoles*/
+  opacity: 0.8;
+  }
+
+  /*Container de notre overlay de connexion*/
+.container {
+  padding: 16px;
+}
+
+.info{ /*Style des informations de la page contact, historique vide et panier vide*/
+  top: 20%;
+  justify-content: center;
+  text-align: center;
+  font-size: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.background { /*Classe qui contient le fond d'écran des pages classiques*/
+  width: 100%;
+  height: 100%;
+  background: #00000000 url("../images/sky.jpg") no-repeat ;
+  background-size: cover;
+  background-position:auto;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-1;
+}
+
+
+#button_panier { /*Style du boutton panier*/
+  background-color:rgb(0, 102, 255);
+  color: rgb(255, 255, 255);
+  height: auto;
+  position: bottom;
+}
+
+#formulaire_confirmation_panier { /*Style du formulaire de confirmation de la commande*/
+  display: none;
+  background-color: #f9f8f89c;
+}
+
+

@@ -1,0 +1,58 @@
+{
+    "tableau_Destination" : [
+        {
+            "destination": "Sydney",
+            "prix_nuit": "500",
+            "petit_dejeuner": true,
+            "animaux" : false,
+            "image_src" : ["../images/Australie_1.jpg","../images/background_Sydney1.jpg"],
+            "description" : "Wazzup mate come closer to hakos baelz le chaos incarné et viens visiter l'Australie magnifique contrée connue pour ses kangourous et ses insectes mortels en tout genre"
+            
+        },
+        {
+            "destination": "Tokyo",
+            "prix_nuit": "400",
+            "petit_dejeuner": true,
+            "animaux" : false,
+            "image_src" : ["../images/Japan_1.jpg","../images/Tokyo.jpg"],
+            "description" : "Venez visiter le Japon et ses magnifiques traditions. Decouvrez de magnifiques temples et une culture entre tradition et modernité"
+            
+        },
+        {
+            "destination": "San Francisco",
+            "prix_nuit": "300",
+            "petit_dejeuner": false,
+            "animaux" : false,
+            "image_src" : ["../images/US_1_1.jpg","../images/background_SanFransisco.jpg"],
+            "description" : "Le rêve Américain dans toute sa splendeur"
+            
+        },
+        {
+            "destination": "Bali",
+            "prix_nuit": "500",
+            "petit_dejeuner": false,
+            "animaux" : true,
+            "image_src" : ["../images/Indonesie_1.jpg","../images/background_Bali.jpg"],
+            "description" : "Découvrez un pays peu connu mais pourtant magnifique. Avec une culture des plus accueillante et chaleureuse"
+            
+        },
+        {
+            "destination": "Paris",
+            "prix_nuit": "200",
+            "petit_dejeuner": true,
+            "animaux" : true,
+            "image_src" : ["../images/Paris_1.jpg","../images/background_Paris.jpg"],
+            "description" : "Tout simplement la classe à la Française première destination touristique pour une bonne raison"
+            
+        },
+        {
+            "destination": "Toronto",
+            "prix_nuit": "400",
+            "petit_dejeuner": false,
+            "animaux" : true,
+            "image_src" : ["../images/canada_1.jpg","../images/background_Toronto.jpg"],
+            "description" : "Le calme chaleureux du canada. Reposez vous dans un pays magnifique où vous avez le temps de vivre."
+            
+        }
+    ]
+}

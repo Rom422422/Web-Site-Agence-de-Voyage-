@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!--Ici seulement besoin de Jquery -->
+    <title>Header</title>
+</head>
+<body>
+    <header>
+        <nav id = navbar> <!--Notre bar de navigation-->
+            <li>
+                <div id = filternav> <!--L'ensemble des filtres-->
+                    <button onclick="dropdownfilter(); filter()" class="btnnav" ><img  src="../images/bars-solid.svg" alt="Filtres" ></button><!--Bouton qui affiche l'overlay des filtres et filtre une première fois avec les paramètres par défauts-->
+                    <section class = 'range-slider'>
+                        <div id="filter" class="filter-content">
+                            <label><b>Filtres</b></label>
+                            <div class="price-input"> <!-- Dans ce div nous avons les input de type nombre avec le texte et le séparateur -->
+                                <div class="field"> 
+                                    <span>Min</span>
+                                    <input onchange="filter()" type="number" id ="price_min" class="input-min" value="100" min = "100" max = "1000" step = "10">
+                                </div>
+                                <div class = "separator">-</div>
+                                <div class="field">
+                                    <span>Max</span>
+                                    <input onchange="filter()" id ="price_max"  type="number" class="input-max" value="900" min = "100" max = "900" step = "10">
+                                </div>
+                            </div>
+                            <div class="slider"> <!--Le div vide qui permet de réaliser le slider ( attention pas les curseurs )-->
+                                <div class="progress"></div>
+                            </div>
+                            <div class="range-input"> <!--Nos deux sliders (dont on garde uniquement les curseurs)-->
+                                <input onchange="filter()" type="range" class="range-min" min="100" max="900" value="100" step = "10">
+                                <input onchange="filter()" type="range" class="range-max" min="100" max="900" value="9000" step = "10">
+                            </div>
+
+                            <div id = "filter_other"> <!--Les filtres de type checkbox -->
+                                <p>
+                                    <br/>
+                                    <label for="">Petit déjeuner disponible</label>
+                                    <input onchange="filter()" class = int type="checkbox" id="filter_ptit_dej" value="1">
+                                </p>
+                                <p>
+                                    <label for="">Animaux autirosés</label>
+                                    <input onchange="filter()" class = int type="checkbox" id="filter_animals" value="1">
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </li>
+            <!-- Autres boutons de la bar de navigation-->
+            <li><a href="historique.html"><img  src="../images/clock-regular.svg" alt="Historique" ></a></li>
+            <li><a href="index.html" class = 'home'><img src="../images/logo-no-background.png" alt="Accueil" ></a></li>
+            <li><a href="panier.html"><img  src="../images/basket-shopping-solid.svg" alt="Panier" ></a></li>
+            
+            <li>
+                <div>
+                    <button onclick="dropdown()" class="btnnav"><img  src="../images/user-regular.svg" alt="Connexion" ></button> <!--Bouton de connexion à un compte-->
+                    <div id="connexion">
+                        <form action="action_page.php" method="post">
+                            <div class="container">
+                            <label for="uname"><b>Adresse mail</b></label>
+                            <input type="text" placeholder="Entrez votre adresse mail" name="uname" required>
+                        
+                            <label for="psw"><b>Mot de passe</b></label>
+                            <input type="password" placeholder="Entez votre mot de passe" name="psw" required>
+                        
+                            <button type="submit">Connexion</button>
+                            <label>
+                                <input type="checkbox" checked="checked" name="remember"> Se souvenir de moi
+                            </label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </li>            
+        </nav>
+    </header>
+</body>
+</html>

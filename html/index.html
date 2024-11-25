@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="../css/stylesheet.css">  
+    <link rel="icon" type="image/x-icon" href="../images/logo-no-background.png"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!-- On importe le Jquery avant notre javasript -->
+    <script src = '../js/main.js'defer></script>
+
+    <title>Home</title> <!--Titre de la page-->
+
+</head>
+<body id = "bodyindex" onload = "remplir_tabDestinations_async()"> <!--On charge tout de suite notre tableau-->
+
+    <div id="header-container"></div> <!--En-tête dynamique-->
+
+    <div id = index class = background>
+        <section>
+            <h1 id = "titre"> <!--Titre du site web-->
+            E-sekai
+            </h1>
+        </section>
+
+        <div class ="grid-cont" id="grid-cont"> <!--Notre template sous forme de grid-->
+            <template id = "dest_city">
+                <div>
+                    <a href="reservation.html?place={{nom_dest}}">
+                        <img src={{image_dest}} class = "image" alt="">
+                        <p>{{image_dest}}</p>
+                        <p class = "info_img">{{nom_dest}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{prix}} € / nuit &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{temp}}°C</p>
+                    </a>
+                </div>
+            </template>
+        </div>
+    </div>
+
+    <div id="footer-container"></div> <!--Pied de page dynamique-->
+</body>
+</html>

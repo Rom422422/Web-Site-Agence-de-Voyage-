@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="../css/stylesheet.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> <!-- On importe le JQuery avant notre javascript-->
+    <script src = '../js/main.js'></script>
+    
+    <title>Réservation</title>
+</head>
+
+
+<body onload="infos();gestion_date();afficher_description()" id = "bodyresa"> <!-- Au chargement on charge les fonctions nécessaire à la réservation-->
+    <div id="header-container"></div><!-- En-tête dynamique-->
+    
+    <template id = 'resabg'>
+        <img src={{dest}} class="background" /> <!--On importe le fond d'écran personnaliser à la destination à partir du template-->
+    </template>
+
+
+    <section id = resa onchange="Calcul_prix()">
+        <p id="ms">Votre réservation pour </p>
+        <form action="panier.html" id = formresa> <!-- Formulaire de réservation qui calcule le prix à chaque changement -->
+            <label for="Start">Date de départ:</label>
+            <input class = int type="date" name="trip-start" value="" id = "date_d" onchange="gestion_date()" required/> <!--On vérifie que la date soit toujours valide à chaque changement -->
+            <label for="Retour">Date de retour:</label>
+            <input class = int type="date" name="trip-back" value="" id = "date_r" onchange="gestion_date()" required/> <!--Idem ici-->
+            <label for="">Nombre d'adulte</label>
+            <input class = int type="number" name="quantity" min="1" value= "1" oninput="validity.valid||(value='');" id = "nb_adu">
+            <label for="">Nombre d'enfant (-12 ans)</label>
+            <input class = int type="number" name="quantity" min="0" value = "0" id="nb_en">
+            <label for="">Petit déjeuner ?</label>
+            <input class = int type="checkbox" id="ptit_dej" value="1">
+            <input type="submit" class = "submit" onclick="envoie_reservation()" >Soumettre</button><!--Bouton qui 'envoie' la réservation dans le panier-->
+            <label for=""></label>
+            <label>Prix actuel : </label> <!--Prix actuel modifié dynamiquement-->
+            <output id = "prix_voyage">0 euro</output> 
+
+        </form>
+        <div id = "grid_container_description">
+            <p>La belle description:</p>
+            <template id = template_description>
+                <p>  
+                    {{description}}</p> <!--Notre belle description sortie tout droit du template--> 
+            </template>
+        </div>
+    </section>
+    <div id="footer-container"></div> <!--Pied de page dynamique-->
+</body>
+
+</html>
